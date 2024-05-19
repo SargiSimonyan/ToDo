@@ -5,7 +5,7 @@ export default function ({todos, onClear }) {
   return(
     <div>
       <span>{complited.length}/{todos.length} Complited</span>
-      <button onClick={(onClear)}>Clear complited</button>
+      <button onClick={(onClear)}>Clear complitedd</button>
     </div>
   )
 }

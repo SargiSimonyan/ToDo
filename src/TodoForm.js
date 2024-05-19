@@ -12,7 +12,7 @@ function TodoFoarm({onAdd}) {
         setText(e.target.value);
         
       }} />
-      <button>Add+</button>
+      <button>Add++</button>
     </form>
   )
 }
