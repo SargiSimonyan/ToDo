@@ -1,20 +1,23 @@
-import { useState } from "react"
+import { useState } from "react";
+import "./TodoForm.css";
 
-function TodoFoarm({onAdd}) {
-  const [text, setText] = useState("");
-  return(
-    <form onSubmit={(e)=>{
-      e.preventDefault();
-      onAdd(text)
-      setText("")
-    }}>
-      <input type="text" value = {text} placeholder="Add+" onChange={(e)=>{
-        setText(e.target.value);
-        
-      }} />
-      <button>Add++</button>
-    </form>
-  )
+function TodoForm({onAdd}) {
+    const [text, setText] = useState("");
+    return (
+        <form 
+            className="todoAppForm"
+            onSubmit={(e) => {
+            e.preventDefault();
+            onAdd(text);
+            setText("");
+        }}>
+            <input className="todoInput"
+            type="text" value={text} onChange={(e) => {
+                setText(e.target.value);
+            }}/>
+            <button className="todoAppAddButton">Add</button>
+        </form>
+    )
 }
 
-export default TodoFoarm;
+export default TodoForm;

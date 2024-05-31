@@ -1,11 +1,17 @@
-export default function ({todos, onClear }) {
-  const complited = todos.filter((todo)=>{
-    return todo.isComplited;
-  })
-  return(
-    <div>
-      <span>{complited.length}/{todos.length} Complited</span>
-      <button onClick={(onClear)}>Clear complitedd</button>
-    </div>
-  )
+import "./TodoFooter.css";
+
+function TodoFooter({todos, onClearCompleted}) {
+
+    const completedSize = todos.filter((todo) => todo.isCompleted).length;
+    return (
+        <div className="todoAppFooter">
+            <span>{completedSize}/{todos.length} Completed</span>
+            <button 
+                className="todoClearCompleted"
+                onClick={onClearCompleted}
+            >Clear Completed</button>
+        </div>
+    )
 }
+
+export default TodoFooter;
